@@ -1,5 +1,4 @@
 [web]
-104.155.160.61
-
+webserver1
 [app]
-35.184.21.128
+appserver1
