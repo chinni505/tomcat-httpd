@@ -1,0 +1,10 @@
+---
+- name: install tomcat app
+  yum: name={{ item }} state=present
+  items:
+    - java
+    - tomcat
+  
+  notify:
+  - restart appserver
+- include: copy_code.yaml

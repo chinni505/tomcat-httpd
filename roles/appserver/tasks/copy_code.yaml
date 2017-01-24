@@ -1,0 +1,11 @@
+---
+- name: create ROOT directory under tomcat webapps path
+  file:
+    path: "{{ tomcat_root }}/ROOT"
+    state: directory
+    mode: 0775
+
+- name: create index file under root
+  template: src=index.j2 dest="{{ tomcat_root }}/ROOT/index.html"
+  notify: 
+  - restart appserver

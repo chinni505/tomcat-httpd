@@ -1,0 +1,3 @@
+---
+- name: restart appserver
+  service: name=tomcat state=restarted

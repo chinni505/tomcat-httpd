@@ -1,0 +1,25 @@
+---
+- name: Apply common installations to all nodes
+  hosts: all
+  become: yes
+
+  roles:
+    - common
+
+
+- name: configure and deploy webserver related
+  hosts: web
+  become: yes
+
+  roles:
+    - webserver
+
+- name: config and deploy app server
+  hosts: app
+  become: yes
+
+  roles:
+    - appserver
+
+
+

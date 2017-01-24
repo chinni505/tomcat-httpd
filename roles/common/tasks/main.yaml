@@ -1,0 +1,8 @@
+---
+- name: install few packages
+  yum: name={{ item }} state=present
+  items:
+    - wget
+    - git
+    - net-tools
+

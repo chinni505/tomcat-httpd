@@ -1,0 +1,10 @@
+---
+- name: configuring httpd
+  template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
+  notify:
+  - restart webserver
+
+- name: copy index.html code
+  git: repo={{ repository }} dest=/var/www/html/
+  notify:
+  - restart webserver
